@@ -208,7 +208,9 @@ user code."
 layers configuration. You are free to put any user code."
   (xterm-mouse-mode -1)
   (global-auto-complete-mode 1)
+  (helm-projectile-on)  ;; replace projectile cmds
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
+  (global-set-key (kbd "C-x b") 'helm-mini)
   (cscope-setup)
   (setq cscope-display-cscope-buffer t)
   (setq helm-swoop-pre-input-function (lambda () (thing-at-point 'symbol)))
