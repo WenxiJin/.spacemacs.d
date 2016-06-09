@@ -209,6 +209,7 @@ layers configuration. You are free to put any user code."
   (xterm-mouse-mode -1)
   (global-auto-complete-mode 1)
   (helm-projectile-on)  ;; replace projectile cmds
+  (setq projectile-switch-project-action 'helm-projectile)
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
   (global-set-key (kbd "C-x b") 'helm-mini)
   (cscope-setup)
