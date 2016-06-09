@@ -23,6 +23,10 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     ;; By default Spacemacs enables auto-completion explicitly for each supported
+     ;; major-mode, it means that =company= and =auto-complete= are not enabled
+     ;; globally, it allows more flexibility to choose an auto-completion engine
+     ;; for a given mode.
      auto-completion
      better-defaults
      emacs-lisp
@@ -52,7 +56,6 @@ values."
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(
                                     ido
-                                    company
                                     )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
@@ -212,7 +215,6 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (xterm-mouse-mode -1)
-  (global-auto-complete-mode 1)
   (helm-projectile-on)  ;; replace projectile cmds
   (setq projectile-switch-project-action 'helm-projectile)
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
