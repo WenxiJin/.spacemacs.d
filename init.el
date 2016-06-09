@@ -32,8 +32,10 @@ values."
      (shell :variables
              shell-default-height 30
              shell-default-position 'bottom)
-     spell-checking
-     syntax-checking
+     ;; brew install ispell --with-lang-en
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil)
+     ;; syntax-checking
      version-control
      cscope
      asciidoc
@@ -216,7 +218,8 @@ layers configuration. You are free to put any user code."
   (global-set-key (kbd "C-x b") 'helm-mini)
   (cscope-setup)
   (setq cscope-display-cscope-buffer t)
-  (setq helm-swoop-pre-input-function (lambda () (thing-at-point 'symbol)))
+  ;; better input for helm-swoop-pre-input-function
+  (global-set-key (kbd "M-i") 'spacemacs/helm-swoop-region-or-symbol)
   (global-whitespace-mode t)
 )
 
