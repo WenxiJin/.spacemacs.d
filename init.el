@@ -200,6 +200,8 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+  (setq whitespace-style
+        (quote (face trailing tab tab-mark lines-tail)))
   )
 
 (defun dotspacemacs/user-config ()
@@ -215,6 +217,7 @@ layers configuration. You are free to put any user code."
   (cscope-setup)
   (setq cscope-display-cscope-buffer t)
   (setq helm-swoop-pre-input-function (lambda () (thing-at-point 'symbol)))
+  (global-whitespace-mode t)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
