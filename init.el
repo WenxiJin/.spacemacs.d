@@ -29,10 +29,6 @@ values."
      ;; for a given mode.
      auto-completion
      better-defaults
-     emacs-lisp
-     git
-     markdown
-     org
      (shell :variables
              shell-default-height 30
              shell-default-position 'bottom)
@@ -41,14 +37,22 @@ values."
                      spell-checking-enable-by-default nil)
      ;; syntax-checking
      version-control
+     git
+     ;; code navigation
      cscope
-     asciidoc
      gtags
+     ;; lang
+     emacs-lisp
+     org
+     markdown
+     asciidoc
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
      python
      java
+     ;; applications
+     ranger
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -226,6 +230,9 @@ layers configuration. You are free to put any user code."
   ;; better input for helm-swoop-pre-input-function
   (global-set-key (kbd "M-i") 'spacemacs/helm-swoop-region-or-symbol)
   (global-whitespace-mode t)
+  (setq eclim-eclipse-dirs "/home/wjn/eclipse"
+        eclim-executable "/home/wjn/eclipse/eclim")
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
