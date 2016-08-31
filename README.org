@@ -1,0 +1,2 @@
+* Dotfile Configuration
+** ~/.spacemacs will always take priority over ~/.spacemacs.d/init.el
