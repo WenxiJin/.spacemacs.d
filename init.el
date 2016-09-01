@@ -222,7 +222,6 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (xterm-mouse-mode -1)
-  (setq-default tab-width 8)
   (add-hook 'java-mode-hook
             (lambda ()
               (setq indent-tabs-mode t)
