@@ -226,6 +226,7 @@ layers configuration. You are free to put any user code."
               (setq tab-width 8)))
   (setq whitespace-style
         (quote (face trailing tab tab-mark lines-tail)))
+  (spacemacs/toggle-automatic-symbol-highlight-on)
   (helm-projectile-on)  ;; replace projectile cmds
   (setq projectile-switch-project-action 'helm-projectile)
   (global-set-key (kbd "C-x C-f") 'spacemacs/helm-find-files)
