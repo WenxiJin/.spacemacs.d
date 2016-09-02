@@ -30,8 +30,8 @@ values."
      auto-completion
      better-defaults
      (shell :variables
-             shell-default-height 30
-             shell-default-position 'bottom)
+            shell-default-height 30
+            shell-default-position 'bottom)
      ;; brew install ispell --with-lang-en
      (spell-checking :variables
                      spell-checking-enable-by-default nil)
@@ -40,7 +40,7 @@ values."
      git
      ;; code navigation
      cscope
-     gtags
+     ;; gtags
      ;; lang
      emacs-lisp
      org
@@ -213,8 +213,6 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-  (setq whitespace-style
-        (quote (face trailing tab tab-mark lines-tail)))
   )
 
 (defun dotspacemacs/user-config ()
@@ -222,10 +220,13 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (xterm-mouse-mode -1)
+  (setq-default tab-width 8)
   (add-hook 'java-mode-hook
             (lambda ()
               (setq indent-tabs-mode t)
               (setq tab-width 8)))
+  (setq whitespace-style
+        (quote (face trailing tab tab-mark lines-tail)))
   (helm-projectile-on)  ;; replace projectile cmds
   (setq projectile-switch-project-action 'helm-projectile)
   (global-set-key (kbd "C-x C-f") 'spacemacs/helm-find-files)
@@ -238,7 +239,7 @@ layers configuration. You are free to put any user code."
   (setq eclim-eclipse-dirs "/home/wjn/eclipse"
         eclim-executable "/home/wjn/eclipse/eclim")
 
-)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
