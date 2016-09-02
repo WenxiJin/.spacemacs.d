@@ -51,8 +51,9 @@ values."
             c-c++-enable-clang-support t)
      python
      java
-     ;; applications
-     ranger
+     ;; tools
+     (ranger :variables
+             ranger-show-preview t)
      ;; themes/colors
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
@@ -230,6 +231,7 @@ layers configuration. You are free to put any user code."
   (setq whitespace-style
         (quote (face trailing tab tab-mark lines-tail)))
   (spacemacs/toggle-automatic-symbol-highlight-on)
+  (ranger-override-dired-mode t) ;; toggle between ranger and deer with key-binding "zp"
   (helm-projectile-on)  ;; replace projectile cmds
   (setq projectile-switch-project-action 'helm-projectile)
   (global-set-key (kbd "C-x C-f") 'spacemacs/helm-find-files)
