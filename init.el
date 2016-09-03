@@ -27,6 +27,7 @@ values."
      ;; major-mode, it means that =company= and =auto-complete= are not enabled
      ;; globally, it allows more flexibility to choose an auto-completion engine
      ;; for a given mode.
+     helm
      auto-completion
      better-defaults
      (shell :variables
@@ -40,7 +41,7 @@ values."
      git
      ;; code navigation
      cscope
-     ;; gtags
+     (gtags :disabled-for emacs-lisp java python)
      ;; lang
      emacs-lisp
      org
@@ -49,14 +50,14 @@ values."
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
-     python
      java
+     ruby
+     python
      ;; tools
      (ranger :variables
              ranger-show-preview t)
      ;; themes/colors
-     =((colors :variables
-               colors-enable-nyan-cat-progress-bar ,(display-graphic-p)))
+     colors
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -65,8 +66,7 @@ values."
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(
-                                    ido
-                                    )
+                                    ido)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
