@@ -216,6 +216,7 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+  (defconst *is-a-mac* (eq system-type 'darwin))
   )
 
 (defun dotspacemacs/user-config ()
@@ -226,6 +227,7 @@ layers configuration. You are free to put any user code."
   (setq-default tab-width 4)
   (setq whitespace-style
         (quote (face trailing tab tab-mark lines-tail)))
+  (global-whitespace-mode t)
   (spacemacs/toggle-automatic-symbol-highlight-on)
   (ranger-override-dired-mode t) ;; toggle between ranger and deer with key-binding "zp"
   (helm-projectile-on)  ;; replace projectile cmds
@@ -236,10 +238,17 @@ layers configuration. You are free to put any user code."
   (setq cscope-display-cscope-buffer t)
   ;; better input for helm-swoop-pre-input-function
   (global-set-key (kbd "M-i") 'spacemacs/helm-swoop-region-or-symbol)
-  (global-whitespace-mode t)
-  (setq eclim-eclipse-dirs "/home/wjn/eclipse"
-        eclim-executable "/home/wjn/eclipse/eclim")
-
+  (if *is-a-mac*
+      ;; brew update
+      ;; brew cask install java
+      ;; brew cask install eclipse-java
+      (progn
+        (setq eclim-eclipse-dirs "/Applications/Eclipse.app/Contents/Eclipse"
+              eclim-executable "/Applications/Eclipse.app/Contents/Eclipse/eclim"))
+    ;; install eclipse in user's home dir, normall is /opt/eclipse
+    (progn
+      (setq eclim-eclipse-dirs "~/eclipse"
+            eclim-executable "~/eclipse/eclim")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
