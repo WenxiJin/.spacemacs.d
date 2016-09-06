@@ -241,6 +241,8 @@ layers configuration. You are free to put any user code."
     (progn
       (setq eclim-eclipse-dirs "~/eclipse"
             eclim-executable "~/eclipse/eclim")))
+  (global-set-key (kbd "<f5>") 'spacemacs/quick-ahs-forward)
+  (global-set-key (kbd "<f6>") 'spacemacs/quick-ahs-backward)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
