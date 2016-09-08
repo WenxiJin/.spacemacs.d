@@ -221,6 +221,7 @@ layers configuration. You are free to put any user code."
   (setq whitespace-style
         (quote (face trailing tab tab-mark lines-tail)))
   (global-whitespace-mode t)
+  (spacemacs/toggle-golden-ratio-on)
   (spacemacs/toggle-automatic-symbol-highlight-on)
   (helm-projectile-on)  ;; replace projectile cmds
   (setq projectile-switch-project-action 'helm-projectile)
