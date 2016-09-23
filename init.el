@@ -47,9 +47,15 @@ values."
      org
      markdown
      asciidoc
+     ;; clang
+     ;; google "cc_args.py", an example below
+     ;; $ CXX='cc_args.py g++' cmake .. -DCMAKE_BUILD_TYPE=Release
+     ;; $ make -j6
+     ;; $ find . | ag clang_complete | xargs cat | sort | uniq > ../../.clang_complete
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
+
      java
      ruby
      python
@@ -223,14 +229,32 @@ layers configuration. You are free to put any user code."
   (global-whitespace-mode t)
   (spacemacs/toggle-golden-ratio-on)
   (spacemacs/toggle-automatic-symbol-highlight-on)
+
+  ;; ===========================================================================
+  ;; projectile
+  (with-eval-after-load 'projectile
+    (push '("C" "h") projectile-other-file-alist))
+
+  ;; ===========================================================================
+  ;; helm
   (helm-projectile-on)  ;; replace projectile cmds
   (setq projectile-switch-project-action 'helm-projectile)
   (global-set-key (kbd "C-x C-f") 'spacemacs/helm-find-files)
   (global-set-key (kbd "C-x b") 'spacemacs/persp-helm-mini)
-  (cscope-setup)
-  (setq cscope-display-cscope-buffer t)
   ;; better input for helm-swoop-pre-input-function
   (global-set-key (kbd "M-i") 'spacemacs/helm-swoop-region-or-symbol)
+  ;; helm-make
+  ;; touch .dir-local.el
+  ;; ((c++-mode (helm-make-build-dir . "Apps/build"))) inside .dir-local.el
+  (put 'helm-make-build-dir 'safe-local-variable 'stringp)
+
+  ;; ===========================================================================
+  ;; cscope
+  (cscope-setup)
+  (setq cscope-display-cscope-buffer t)
+
+  ;; ===========================================================================
+  ;; eclim
   (if *is-a-mac*
       ;; brew update
       ;; brew cask install java
@@ -242,6 +266,9 @@ layers configuration. You are free to put any user code."
     (progn
       (setq eclim-eclipse-dirs "~/eclipse"
             eclim-executable "~/eclipse/eclim")))
+
+  ;; ===========================================================================
+  ;; auto-highlight-symbol
   (global-set-key (kbd "<f5>") 'spacemacs/quick-ahs-forward)
   (global-set-key (kbd "<f6>") 'spacemacs/quick-ahs-backward)
   )
