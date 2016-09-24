@@ -232,6 +232,8 @@ layers configuration. You are free to put any user code."
 
   ;; ===========================================================================
   ;; projectile
+  ;; svn is not supported yet, mark a folder manually as a project by creating
+  ;; an empty .projectile file in it
   (with-eval-after-load 'projectile
     (push '("C" "h") projectile-other-file-alist))
 
