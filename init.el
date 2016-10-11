@@ -320,7 +320,7 @@ you should place your code here."
   (setq whitespace-style
         (quote (face trailing tab tab-mark lines-tail)))
   (global-whitespace-mode t)
-  (spacemacs/toggle-golden-ratio-on)
+  ;; (spacemacs/toggle-golden-ratio-on)
   (spacemacs/toggle-automatic-symbol-highlight-on)
 
   ;; ===========================================================================
