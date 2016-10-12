@@ -36,7 +36,8 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
+     ;; helm
+     ivy
      auto-completion
      better-defaults
      git
@@ -329,6 +330,7 @@ you should place your code here."
   ;; an empty .projectile file in it
   (with-eval-after-load 'projectile
     (push '("C" "h") projectile-other-file-alist))
+  (setq projectile-enable-caching t)
 
   ;; ===========================================================================
   ;; helm
