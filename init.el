@@ -334,17 +334,17 @@ you should place your code here."
   (setq projectile-enable-caching t)
 
   ;; ===========================================================================
-  ;; ;; helm
-  ;; (helm-projectile-on)  ;; replace projectile cmds
-  ;; (setq projectile-switch-project-action 'helm-projectile)
-  ;; (global-set-key (kbd "C-x C-f") 'spacemacs/helm-find-files)
-  ;; (global-set-key (kbd "C-x b") 'spacemacs/persp-helm-mini)
-  ;; ;; better input for helm-swoop-pre-input-function
-  ;; (global-set-key (kbd "M-i") 'spacemacs/helm-swoop-region-or-symbol)
-  ;; ;; helm-make
-  ;; ;; touch .dir-local.el
-  ;; ;; ((c++-mode (helm-make-build-dir . "Apps/build"))) inside .dir-local.el
-  ;; (put 'helm-make-build-dir 'safe-local-variable 'stringp)
+  ;; helm
+  (helm-projectile-on)  ;; replace projectile cmds
+  (setq projectile-switch-project-action 'helm-projectile)
+  (global-set-key (kbd "C-x C-f") 'spacemacs/helm-find-files)
+  (global-set-key (kbd "C-x b") 'spacemacs/persp-helm-mini)
+  ;; better input for helm-swoop-pre-input-function
+  (global-set-key (kbd "M-i") 'spacemacs/helm-swoop-region-or-symbol)
+  ;; helm-make
+  ;; touch .dir-local.el
+  ;; ((c++-mode (helm-make-build-dir . "Apps/build"))) inside .dir-local.el
+  (put 'helm-make-build-dir 'safe-local-variable 'stringp)
 
   ;; ===========================================================================
   ;; cscope
