@@ -319,6 +319,12 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (xterm-mouse-mode -1)
   (setq-default tab-width 4)
+  ;; project specific indent, add ".dir-locals.el" under project root
+  ;; ((nil . ((indent-tabs-mode . t)
+  ;;          (tab-width . 4))))
+
+  ;; ===========================================================================
+  ;; whitespace
   (setq whitespace-style
         (quote (face trailing tab tab-mark lines-tail)))
   (global-whitespace-mode t)
