@@ -318,10 +318,16 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (xterm-mouse-mode -1)
+  ;; ===========================================================================
+  ;; indent
   (setq-default tab-width 4)
   ;; project specific indent, add ".dir-locals.el" under project root
+  ;; The 'nil' configuration applies to all modes.
   ;; ((nil . ((indent-tabs-mode . t)
-  ;;          (tab-width . 4))))
+  ;;          (tab-width . 2)))
+  ;;  (haskell-mode . (
+  ;;                   ;; Highlight leading space characters in Haskell files.
+  ;;                   (eval . (highlight-regexp "^ *")))))
 
   ;; ===========================================================================
   ;; whitespace
