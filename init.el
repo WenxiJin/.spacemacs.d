@@ -335,7 +335,10 @@ you should place your code here."
         (quote (face trailing tab tab-mark lines-tail)))
   (global-whitespace-mode t)
   ;; (spacemacs/toggle-golden-ratio-on)
-  (spacemacs/toggle-automatic-symbol-highlight-on)
+
+  ;; ===========================================================================
+  ;; highlight
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
 
   ;; ===========================================================================
   ;; projectile
