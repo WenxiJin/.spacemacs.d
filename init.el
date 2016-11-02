@@ -341,6 +341,11 @@ you should place your code here."
   (add-hook 'prog-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
 
   ;; ===========================================================================
+  ;; auto-completion
+  (add-hook 'java-mode-hook
+            (lambda () (setq company-idle-delay 1)))
+
+  ;; ===========================================================================
   ;; projectile
   ;; svn is not supported yet, mark a folder manually as a project by creating
   ;; an empty .projectile file in it
