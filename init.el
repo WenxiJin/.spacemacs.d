@@ -322,11 +322,13 @@ you should place your code here."
   (setq-default tab-width 4)
   ;; project specific indent, add ".dir-locals.el" under project root
   ;; The 'nil' configuration applies to all modes.
-  ;; ((nil . ((indent-tabs-mode . t)
-  ;;          (tab-width . 2)))
-  ;;  (haskell-mode . (
-  ;;                   ;; Highlight leading space characters in Haskell files.
-  ;;                   (eval . (highlight-regexp "^ *")))))
+  ;; ((nil
+  ;;   (indent-tabs-mode . t)
+  ;;   (tab-width . 4)
+  ;;   (fill-column . 80))
+  ;;  (java-mode
+  ;;   (whitespace-style face lines indentation:space)
+  ;;   ))
 
   ;; ===========================================================================
   ;; whitespace
