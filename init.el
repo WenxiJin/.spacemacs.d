@@ -44,8 +44,8 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     spell-checking
-     syntax-checking
+     ;; spell-checking
+     ;; syntax-checking
      version-control
      ;; code navigation
      cscope
@@ -53,7 +53,7 @@ values."
      ;; language
      emacs-lisp
      org
-     ;; markdown
+     markdown
      ;; clang
      ;; google "cc_args.py", an example below
      ;; $ CXX='cc_args.py g++' cmake .. -DCMAKE_BUILD_TYPE=Release
