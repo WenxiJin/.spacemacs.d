@@ -335,6 +335,18 @@ you should place your code here."
   ;; (setq whitespace-style
   ;;       (quote (face trailing tab tab-mark lines-tail)))
   ;; (global-whitespace-mode t)
+  (setq-default show-trailing-whitespace t)
+
+  (defun wjn/no-trailing-whitespace ()
+    "Turn off display of trailing whitespace in this buffer."
+    (setq show-trailing-whitespace nil))
+
+  (dolist (hook '(term-mode-hook
+                  compilation-mode-hook
+                  minibuffer-setup-hook
+                  java-mode-hook))
+    (add-hook hook #'wjn/no-trailing-whitespace))
+
   ;; (spacemacs/toggle-golden-ratio-on)
 
   ;; ===========================================================================
