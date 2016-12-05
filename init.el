@@ -62,8 +62,7 @@ values."
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
-
-     java
+     ;; java
      ruby
      python
      )
@@ -343,7 +342,8 @@ you should place your code here."
   ;; ===========================================================================
   ;; auto-completion
   (add-hook 'java-mode-hook
-            (lambda () (setq company-idle-delay 1)))
+            (lambda () (setq company-idle-delay 1))
+            (setq-default spacemacs-show-trailing-whitespace nil))
 
   ;; ===========================================================================
   ;; projectile
