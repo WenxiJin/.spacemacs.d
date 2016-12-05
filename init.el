@@ -332,20 +332,25 @@ you should place your code here."
 
   ;; ===========================================================================
   ;; whitespace
-  ;; (setq whitespace-style
-  ;;       (quote (face trailing tab tab-mark lines-tail)))
+  (setq whitespace-style
+        (quote (face trailing tab tab-mark lines-tail)))
+  (defun wjn/enable-whitespace-mode ()
+    "Turn on whitespace mode in this buffer."
+    (whitespace-mode t))
+  (dolist (hook '(c-mode-hook
+                  c++-mode-hook))
+    (add-hook hook 'wjn/enable-whitespace-mode))
   ;; (global-whitespace-mode t)
   (setq-default show-trailing-whitespace t)
 
   (defun wjn/no-trailing-whitespace ()
     "Turn off display of trailing whitespace in this buffer."
     (setq show-trailing-whitespace nil))
-
   (dolist (hook '(term-mode-hook
                   compilation-mode-hook
                   minibuffer-setup-hook
                   java-mode-hook))
-    (add-hook hook #'wjn/no-trailing-whitespace))
+    (add-hook hook 'wjn/no-trailing-whitespace))
 
   ;; (spacemacs/toggle-golden-ratio-on)
 
@@ -356,8 +361,8 @@ you should place your code here."
   ;; ===========================================================================
   ;; auto-completion
   (add-hook 'java-mode-hook
-            (lambda () (setq company-idle-delay 1))
-            (setq-default spacemacs-show-trailing-whitespace nil))
+            (setq-default spacemacs-show-trailing-whitespace nil)
+            'append)
 
   ;; ===========================================================================
   ;; projectile
