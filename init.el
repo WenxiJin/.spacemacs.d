@@ -48,7 +48,7 @@ values."
      ;; syntax-checking
      version-control
      cscope
-     (gtags :disabled-for emacs-lisp python)
+     gtags
      emacs-lisp
      org
      markdown
@@ -329,6 +329,12 @@ you should place your code here."
   ;;  (java-mode
   ;;   (whitespace-style face lines indentation:space)
   ;;   ))
+  (defun wjn/setup-java-mode-indent ()
+    "Setup tab indent for java mode."
+    (setq indent-tabs-mode t
+          tab-width 4)
+    (message "Indent for java mode is setup..."))
+  (add-hook 'java-mode-hook 'wjn/setup-java-mode-indent)
 
   ;; ===========================================================================
   ;; whitespace
@@ -356,17 +362,12 @@ you should place your code here."
                   java-mode-hook))
     (add-hook hook 'wjn/no-trailing-whitespace))
 
-  ;; (spacemacs/toggle-golden-ratio-on)
-
   ;; ===========================================================================
   ;; highlight
   (add-hook 'prog-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
 
   ;; ===========================================================================
   ;; auto-completion
-  (add-hook 'java-mode-hook
-            (setq-default spacemacs-show-trailing-whitespace nil)
-            'append)
 
   ;; ===========================================================================
   ;; projectile
