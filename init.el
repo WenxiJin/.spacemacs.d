@@ -47,18 +47,18 @@ values."
      ;; spell-checking
      ;; syntax-checking
      version-control
-     ;; code navigation
      cscope
-     (gtags :disabled-for emacs-lisp java python)
-     ;; language
+     (gtags :disabled-for emacs-lisp python)
      emacs-lisp
      org
      markdown
+     ;; ----------------------------------------------------------------
      ;; clang
      ;; google "cc_args.py", an example below
      ;; $ CXX='cc_args.py g++' cmake .. -DCMAKE_BUILD_TYPE=Release
      ;; $ make -j6
      ;; $ find . | ag clang_complete | xargs cat | sort | uniq > ../../.clang_complete
+     ;; ----------------------------------------------------------------
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
