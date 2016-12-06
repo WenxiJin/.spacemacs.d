@@ -337,11 +337,15 @@ you should place your code here."
   (defun wjn/enable-whitespace-mode ()
     "Turn on whitespace mode in this buffer."
     (whitespace-mode t))
+  (defun wjn/enable-show-trailing-whitespace ()
+    "Turn on show-trailing-whitespace in this buffer."
+    (setq show-trailing-whitespace t))
   (dolist (hook '(c-mode-hook
                   c++-mode-hook))
     (add-hook hook 'wjn/enable-whitespace-mode))
-  ;; (global-whitespace-mode t)
-  (setq-default show-trailing-whitespace t)
+  (dolist (hook '(c-mode-hook
+                  c++-mode-hook))
+    (add-hook hook 'wjn/enable-show-trailing-whitespace))
 
   (defun wjn/no-trailing-whitespace ()
     "Turn off display of trailing whitespace in this buffer."
