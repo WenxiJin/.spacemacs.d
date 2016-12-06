@@ -62,7 +62,7 @@ values."
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
-     ;; java
+     java
      ruby
      python
      )
@@ -332,8 +332,7 @@ you should place your code here."
   (defun wjn/setup-java-mode-indent ()
     "Setup tab indent for java mode."
     (setq indent-tabs-mode t
-          tab-width 4)
-    (message "Indent for java mode is setup..."))
+          tab-width 4))
   (add-hook 'java-mode-hook 'wjn/setup-java-mode-indent)
 
   ;; ===========================================================================
