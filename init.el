@@ -331,11 +331,12 @@ you should place your code here."
   ;;  (java-mode
   ;;   (whitespace-style face lines indentation:space)
   ;;   ))
-  (defun wjn/setup-java-mode-indent ()
-    "Setup tab indent for java mode."
+  (defun wjn/setup-tab-indent ()
+    "Setup tab indent for certain mode."
     (setq indent-tabs-mode t
           tab-width 4))
-  (add-hook 'java-mode-hook 'wjn/setup-java-mode-indent)
+  (add-hook 'java-mode-hook 'wjn/setup-tab-indent)
+  (add-hook 'nxml-mode-hook 'wjn/setup-tab-indent)
 
   ;; ===========================================================================
   ;; whitespace
@@ -362,10 +363,6 @@ you should place your code here."
                   minibuffer-setup-hook
                   java-mode-hook))
     (add-hook hook 'wjn/no-trailing-whitespace))
-
-  ;; ===========================================================================
-  ;; highlight
-  (add-hook 'prog-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
 
   ;; ===========================================================================
   ;; auto-completion
