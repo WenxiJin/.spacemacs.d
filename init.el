@@ -370,6 +370,13 @@ you should place your code here."
   ;; auto-completion
 
   ;; ===========================================================================
+  ;; highlight
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
+  ;; auto-highlight-symbol
+  (global-set-key (kbd "<f5>") 'spacemacs/quick-ahs-forward)
+  (global-set-key (kbd "<f6>") 'spacemacs/quick-ahs-backward)
+
+  ;; ===========================================================================
   ;; projectile
   ;; svn is not supported yet, mark a folder manually as a project by creating
   ;; an empty .projectile file in it
@@ -410,9 +417,6 @@ you should place your code here."
             eclim-executable "~/eclipse/eclim")))
 
   ;; ===========================================================================
-  ;; auto-highlight-symbol
-  (global-set-key (kbd "<f5>") 'spacemacs/quick-ahs-forward)
-  (global-set-key (kbd "<f6>") 'spacemacs/quick-ahs-backward)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
