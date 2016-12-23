@@ -323,7 +323,10 @@ you should place your code here."
   (xterm-mouse-mode -1)
   ;; ===========================================================================
   ;; indent
+  ;; setq-default sets the global default value
+  ;; setq sets the local value in the current buffer
   (setq-default tab-width 4)
+  (setq-default indent-tabs-mode t)
   ;; project specific indent, add ".dir-locals.el" under project root
   ;; The 'nil' configuration applies to all modes.
   ;; ((nil
@@ -333,32 +336,12 @@ you should place your code here."
   ;;  (java-mode
   ;;   (whitespace-style face lines indentation:space)
   ;;   ))
-  (defun wjn/setup-tab-indent ()
-    "Setup tab indent for certain mode."
-    (setq indent-tabs-mode t
-          tab-width 4))
-  (add-hook 'java-mode-hook 'wjn/setup-tab-indent)
-  (add-hook 'nxml-mode-hook 'wjn/setup-tab-indent)
 
   ;; ===========================================================================
   ;; whitespace
-  (setq whitespace-style
-        (quote (face trailing tab tab-mark lines-tail)))
-  (defun wjn/enable-whitespace-mode ()
-    "Turn on whitespace mode in this buffer."
-    (whitespace-mode t))
-  (defun wjn/enable-show-trailing-whitespace ()
-    "Turn on show-trailing-whitespace in this buffer."
-    (setq show-trailing-whitespace t))
-  (defun wjn/no-trailing-whitespace ()
-    "Turn off display of trailing whitespace in this buffer."
-    (setq show-trailing-whitespace nil))
-
-  (dolist (hook '(term-mode-hook
-                  compilation-mode-hook
-                  minibuffer-setup-hook
-                  prog-mode-hook))
-    (add-hook hook 'wjn/no-trailing-whitespace))
+  (setq-default whitespace-style
+                (quote (face trailing tab tab-mark lines-tail)))
+  (setq-default spacemacs-show-trailing-whitespace nil)
 
   ;; ===========================================================================
   ;; auto-completion
