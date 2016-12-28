@@ -327,6 +327,7 @@ you should place your code here."
   ;; setq sets the local value in the current buffer
   (setq-default tab-width 4)
   (setq-default indent-tabs-mode t)
+  (c-set-offset 'case-label '+)
   ;; project specific indent, add ".dir-locals.el" under project root
   ;; The 'nil' configuration applies to all modes.
   ;; ((nil
