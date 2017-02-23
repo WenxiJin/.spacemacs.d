@@ -63,6 +63,7 @@ values."
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
      java
+     php
      ruby
      python
      ;; (colors :variables
