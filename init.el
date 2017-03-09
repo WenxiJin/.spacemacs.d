@@ -64,6 +64,7 @@ values."
             c-c++-enable-clang-support t)
      java
      php
+     shell-scripts
      ruby
      python
      ;; (colors :variables
@@ -327,7 +328,6 @@ you should place your code here."
   ;; setq-default sets the global default value
   ;; setq sets the local value in the current buffer
   (setq-default tab-width 4)
-  (setq-default indent-tabs-mode t)
   (c-set-offset 'case-label '+)
   ;; project specific indent, add ".dir-locals.el" under project root
   ;; The 'nil' configuration applies to all modes.
@@ -346,14 +346,18 @@ you should place your code here."
   (setq-default spacemacs-show-trailing-whitespace nil)
 
   ;; ===========================================================================
+  ;; indent
+  (add-hook 'java-mode-hook (lambda ()
+                              (setq c-basic-offset 4
+                                    tab-width 4
+                                    indent-tabs-mode t)))
+
+  ;; ===========================================================================
   ;; auto-completion
 
   ;; ===========================================================================
   ;; highlight
   (add-hook 'prog-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
-  ;; auto-highlight-symbol
-  (global-set-key (kbd "<f5>") 'spacemacs/quick-ahs-forward)
-  (global-set-key (kbd "<f6>") 'spacemacs/quick-ahs-backward)
 
   ;; ===========================================================================
   ;; projectile
