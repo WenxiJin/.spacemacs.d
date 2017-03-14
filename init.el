@@ -339,19 +339,19 @@ you should place your code here."
   ;;  (java-mode
   ;;   (whitespace-style face lines indentation:space)
   ;;   ))
+  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
+  (add-hook 'java-mode-hook (lambda ()
+                              (setq c-basic-offset 4
+                                    tab-width 4
+                                    indent-tabs-mode t)))
 
   ;; ===========================================================================
   ;; whitespace
   (setq-default whitespace-style
                 (quote (face trailing tab tab-mark lines-tail)))
   (setq-default spacemacs-show-trailing-whitespace nil)
-
-  ;; ===========================================================================
-  ;; indent
-  (add-hook 'java-mode-hook (lambda ()
-                              (setq c-basic-offset 4
-                                    tab-width 4
-                                    indent-tabs-mode t)))
 
   ;; ===========================================================================
   ;; auto-completion
