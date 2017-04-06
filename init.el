@@ -345,10 +345,14 @@ you should place your code here."
   (add-hook 'c-mode-common-hook 'google-set-c-style)
   (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
+  ;; inexpr-class
+  ;; A class definition inside an expression. This is used for anonymous classes in Java. It’s also used for anonymous array initializers in Java.
   (add-hook 'java-mode-hook (lambda ()
                               (setq c-basic-offset 4
                                     tab-width 4
-                                    indent-tabs-mode t)))
+                                    indent-tabs-mode t)
+                              (c-set-offset 'inexpr-class 0)
+                              ))
   ;; ===========================================================================
   ;; whitespace
   (setq-default whitespace-style
