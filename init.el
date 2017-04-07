@@ -358,7 +358,7 @@ you should place your code here."
   (setq-default whitespace-style
                 (quote (face trailing tab tab-mark lines-tail)))
   (setq-default spacemacs-show-trailing-whitespace nil)
-  (add-hook 'c-mode-common-hook 'whitespace-mode)
+  ;; (add-hook 'c-mode-common-hook 'whitespace-mode)
 
   ;; ===========================================================================
   ;; auto-completion
