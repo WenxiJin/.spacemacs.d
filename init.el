@@ -67,6 +67,7 @@ values."
      shell-scripts
      ruby
      python
+     sql
      ;; (colors :variables
      ;;        colors-colorize-identifiers 'all
      ;;        colors-enable-nyan-cat-progress-bar t)
@@ -344,6 +345,9 @@ you should place your code here."
                                         )))
   (add-hook 'c-mode-common-hook 'google-set-c-style)
   (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
+  ;; Associate major mode by file name extension
+  (add-to-list 'auto-mode-alist '("\\.cnf\\'" . conf-mode))
 
   ;; inexpr-class
   ;; A class definition inside an expression. This is used for anonymous classes in Java. It’s also used for anonymous array initializers in Java.
