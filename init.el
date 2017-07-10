@@ -47,7 +47,7 @@ values."
      ;; spell-checking
      ;; syntax-checking
      version-control
-     cscope
+     ;; cscope
      gtags
      emacs-lisp
      org
