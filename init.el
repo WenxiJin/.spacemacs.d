@@ -399,8 +399,8 @@ you should place your code here."
 
   ;; ===========================================================================
   ;; cscope
-  (cscope-setup)
-  (setq cscope-display-cscope-buffer t)
+  ;; (cscope-setup)
+  ;; (setq cscope-display-cscope-buffer t)
 
   ;; ===========================================================================
   ;; eclim
