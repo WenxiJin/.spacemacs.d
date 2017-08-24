@@ -399,6 +399,9 @@ you should place your code here."
   (global-set-key (kbd "C-x C-f") 'spacemacs/helm-find-files)
   (global-set-key (kbd "C-x b") 'spacemacs/persp-helm-mini)
   (global-set-key (kbd "C-x C-b") 'spacemacs/persp-helm-mini)
+  ;; helm-ag
+  (custom-set-variables
+   '(helm-ag-base-command "ag --nocolor --nogroup  --ignore-case"))
   ;; better input for helm-swoop-pre-input-function
   (global-set-key (kbd "M-i") 'spacemacs/helm-swoop-region-or-symbol)
   ;; helm-make
