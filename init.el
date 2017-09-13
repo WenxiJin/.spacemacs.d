@@ -358,6 +358,7 @@ you should place your code here."
 
   ;; Associate major mode by file name extension
   (add-to-list 'auto-mode-alist '("\\.cnf\\'" . conf-mode))
+  (add-to-list 'auto-mode-alist '("\\.jobdsl\\'" . groovy-mode))
 
   ;; inexpr-class
   ;; A class definition inside an expression. This is used for anonymous classes in Java. It’s also used for anonymous array initializers in Java.
