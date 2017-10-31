@@ -350,6 +350,13 @@ you should place your code here."
   ;;  (java-mode
   ;;   (whitespace-style face lines indentation:space)
   ;;   ))
+
+  ;; ===========================================================================
+  ;; Enable toggles
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-fill-column-indicator-on)
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-hungry-delete-on)
+
+  ;; ===========================================================================
   (add-hook 'c-mode-common-hook (lambda ()
                                   (setq c-basic-offset 4
                                         )))
