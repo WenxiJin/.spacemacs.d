@@ -354,7 +354,6 @@ you should place your code here."
   ;; ===========================================================================
   ;; Enable toggles
   (add-hook 'prog-mode-hook 'spacemacs/toggle-fill-column-indicator-on)
-  (add-hook 'prog-mode-hook 'spacemacs/toggle-hungry-delete-on)
 
   ;; ===========================================================================
   (add-hook 'c-mode-common-hook (lambda ()
