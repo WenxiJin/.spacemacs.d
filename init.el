@@ -374,10 +374,10 @@ you should place your code here."
                                     indent-tabs-mode t)
                               (c-set-offset 'inexpr-class 0)
                               ))
-  (add-hook 'nxml-mode (lambda ()
-                         (setq c-basic-offset 4
-                               tab-width 4
-                               indent-tabs-mode t)))
+  (add-hook 'nxml-mode-hook (lambda ()
+                              (setq c-basic-offset 4
+                                    tab-width 4
+                                    indent-tabs-mode t)))
   ;; ===========================================================================
   ;; whitespace
   (setq-default whitespace-style
