@@ -371,7 +371,8 @@ you should place your code here."
   (add-hook 'java-mode-hook (lambda ()
                               (setq c-basic-offset 4
                                     tab-width 4
-                                    indent-tabs-mode t)
+                                    indent-tabs-mode t
+                                    fill-column 100)
                               (c-set-offset 'inexpr-class 0)
                               ))
   (add-hook 'nxml-mode-hook (lambda ()
