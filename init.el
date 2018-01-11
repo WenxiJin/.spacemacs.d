@@ -420,6 +420,8 @@ you should place your code here."
   ;; touch .dir-local.el
   ;; ((c++-mode (helm-make-build-dir . "Apps/build"))) inside .dir-local.el
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
+  ;; helm-google-suggest
+  (setq '(browse-url-browser-function (quote browse-url-chrome))
 
   ;; ===========================================================================
   ;; cscope
