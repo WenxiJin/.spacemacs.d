@@ -65,6 +65,7 @@ values."
      shell-scripts
      ruby
      python
+     sql
      ;; (colors :variables
      ;;        colors-colorize-identifiers 'all
      ;;        colors-enable-nyan-cat-progress-bar t)
