@@ -353,10 +353,6 @@ you should place your code here."
   ;;   ))
 
   ;; ===========================================================================
-  ;; Enable toggles
-  (add-hook 'prog-mode-hook 'spacemacs/toggle-fill-column-indicator-on)
-
-  ;; ===========================================================================
   (add-hook 'c-mode-common-hook (lambda ()
                                   (setq c-basic-offset 4
                                         )))
