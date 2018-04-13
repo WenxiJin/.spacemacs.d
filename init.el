@@ -386,6 +386,9 @@ you should place your code here."
   ;; ===========================================================================
   ;; auto-completion
 
+  ;; Enable toggles
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-line-numbers-on)
+
   ;; ===========================================================================
   ;; highlight
   (add-hook 'prog-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
