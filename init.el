@@ -349,7 +349,7 @@ you should place your code here."
   (defun my-indent-hook ()
     (setq c-basic-offset 4)
     (c-set-offset 'case-label '+)
-    (c-set-offset 'arglist-cont-nonempty '+)
+    (c-set-offset 'arglist-cont-nonempty '++)
     (c-set-offset 'statement-cout '+)
     )
   ;; project specific indent, add ".dir-locals.el" under project root
