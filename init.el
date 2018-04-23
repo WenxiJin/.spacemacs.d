@@ -341,7 +341,17 @@ you should place your code here."
   ;; setq-default sets the global default value
   ;; setq sets the local value in the current buffer
   (setq-default tab-width 4)
-  (c-set-offset 'case-label '+)
+  ;; https://www.gnu.org/software/emacs/manual/html_node/efaq/Customizing-C-and-C_002b_002b-indentation.html#Customizing-C-and-C_002b_002b-indentation
+  ;; C-c C-o to show syntactic symbol
+  ;; Change syntactic symbol by 0, +, -, ++, --, *, /
+  ;; C-c C-q to reindent
+  ;; Update syntactic symbol below
+  (defun my-indent-hook ()
+    (setq c-basic-offset 4)
+    (c-set-offset 'case-label '+)
+    (c-set-offset 'arglist-cont-nonempty '+)
+    (c-set-offset 'statement-cout '+)
+    )
   ;; project specific indent, add ".dir-locals.el" under project root
   ;; The 'nil' configuration applies to all modes.
   ;; ((nil
@@ -353,9 +363,7 @@ you should place your code here."
   ;;   ))
 
   ;; ===========================================================================
-  (add-hook 'c-mode-common-hook (lambda ()
-                                  (setq c-basic-offset 4
-                                        )))
+  (add-hook 'c-mode-common-hook 'my-indent-hook)
   (add-hook 'c-mode-common-hook 'google-set-c-style)
   (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
