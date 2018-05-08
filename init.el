@@ -284,7 +284,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -342,7 +342,7 @@ you should place your code here."
   ;; setq sets the local value in the current buffer
   (setq-default tab-width 4)
   ;; Encoding system
-  (set-language-environment "ISO-8859-1")
+  (set-language-environment 'Latin-1)
 
   ;; https://www.gnu.org/software/emacs/manual/html_node/efaq/Customizing-C-and-C_002b_002b-indentation.html#Customizing-C-and-C_002b_002b-indentation
   ;; C-c C-o to show syntactic symbol
@@ -398,7 +398,6 @@ you should place your code here."
   ;; auto-completion
 
   ;; Enable toggles
-  (add-hook 'prog-mode-hook 'spacemacs/toggle-line-numbers-on)
 
   ;; ===========================================================================
   ;; highlight
