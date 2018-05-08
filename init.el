@@ -341,6 +341,9 @@ you should place your code here."
   ;; setq-default sets the global default value
   ;; setq sets the local value in the current buffer
   (setq-default tab-width 4)
+  ;; Encoding system
+  (set-language-environment "ISO-8859-1")
+
   ;; https://www.gnu.org/software/emacs/manual/html_node/efaq/Customizing-C-and-C_002b_002b-indentation.html#Customizing-C-and-C_002b_002b-indentation
   ;; C-c C-o to show syntactic symbol
   ;; Change syntactic symbol by 0, +, -, ++, --, *, /
