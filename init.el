@@ -76,7 +76,8 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(vlf
                                       google-c-style
-                                      groovy-mode)
+                                      groovy-mode
+                                      nyan-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -343,6 +344,8 @@ you should place your code here."
   (setq-default tab-width 4)
   ;; Encoding system
   (set-language-environment 'Latin-1)
+  ;;
+  (nyan-mode 1)
 
   ;; https://www.gnu.org/software/emacs/manual/html_node/efaq/Customizing-C-and-C_002b_002b-indentation.html#Customizing-C-and-C_002b_002b-indentation
   ;; C-c C-o to show syntactic symbol
@@ -398,6 +401,7 @@ you should place your code here."
   ;; auto-completion
 
   ;; Enable toggles
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-golden-ratio-on)
 
   ;; ===========================================================================
   ;; highlight
