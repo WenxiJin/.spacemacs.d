@@ -51,6 +51,7 @@ values."
      gtags
      emacs-lisp
      org
+     markdown
      ;; ----------------------------------------------------------------
      ;; clang
      ;; google "cc_args.py", an example below
