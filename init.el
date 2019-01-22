@@ -285,7 +285,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -429,8 +429,7 @@ you should place your code here."
   (custom-set-variables
    '(helm-ag-base-command "ag --nocolor --nogroup  --ignore-case"))
   ;; helm-swoop
-  ;; better input for helm-swoop-pre-input-function
-  (global-set-key (kbd "M-i") 'spacemacs/helm-swoop-region-or-symbol)
+  (global-set-key (kbd "\C-s") 'helm-swoop)
 
   ;; helm-make
   ;; touch .dir-local.el
