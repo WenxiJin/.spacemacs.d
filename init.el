@@ -430,7 +430,8 @@ you should place your code here."
   (custom-set-variables
    '(helm-ag-base-command "ag --nocolor --nogroup  --ignore-case"))
   ;; helm-swoop
-  (global-set-key (kbd "\C-s") 'helm-swoop)
+  ;; better input for helm-swoop-pre-input-function
+  (global-set-key (kbd "M-i") 'spacemacs/helm-swoop-region-or-symbol)
 
   ;; helm-make
   ;; touch .dir-local.el
