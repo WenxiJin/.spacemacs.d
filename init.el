@@ -78,7 +78,9 @@ values."
    dotspacemacs-additional-packages '(vlf
                                       google-c-style
                                       groovy-mode
-                                      nyan-mode)
+                                      nyan-mode
+                                      atom-one-dark-theme
+                                      afternoon-theme)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
