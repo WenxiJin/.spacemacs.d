@@ -67,6 +67,7 @@ values."
      ruby
      python
      sql
+     swift
      ;; (colors :variables
      ;;        colors-colorize-identifiers 'all
      ;;        colors-enable-nyan-cat-progress-bar t)
@@ -455,7 +456,8 @@ you should place your code here."
       ;; brew cask install eclipse-java
       (progn
         (setq eclim-eclipse-dirs "/Applications/Eclipse.app/Contents/Eclipse"
-              eclim-executable "/Applications/Eclipse.app/Contents/Eclipse/eclim"))
+              eclim-executable "/Applications/Eclipse.app/Contents/Eclipse/eclim")
+        (setq mac-right-option-modifier 'none))
     ;; install eclipse in user's home dir, normall is /opt/eclipse
     (progn
       (setq eclim-eclipse-dirs "~/eclipse"
