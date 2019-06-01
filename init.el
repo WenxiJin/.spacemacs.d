@@ -64,6 +64,7 @@ values."
             c-c++-enable-clang-support t)
      java
      javascript
+     html
      shell-scripts
      ruby
      python
