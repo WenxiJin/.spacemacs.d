@@ -69,21 +69,18 @@ values."
      ruby
      python
      sql
-     swift
-     themes-megapack
-     ;; (colors :variables
-     ;;        colors-colorize-identifiers 'all
-     ;;        colors-enable-nyan-cat-progress-bar t)
+     (colors :variables
+            colors-colorize-identifiers 'all
+            colors-enable-nyan-cat-progress-bar t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(vlf
-                                      google-c-style
                                       groovy-mode
                                       nyan-mode
-                                      )
+                                      dtrt-indent)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -358,12 +355,7 @@ you should place your code here."
   ;; Change syntactic symbol by 0, +, -, ++, --, *, /
   ;; C-c C-q to reindent
   ;; Update syntactic symbol below
-  (defun my-indent-hook ()
-    (setq c-basic-offset 4)
-    (c-set-offset 'case-label '+)
-    (c-set-offset 'arglist-cont-nonempty '++)
-    (c-set-offset 'statement-cout '+)
-    )
+
   ;; project specific indent, add ".dir-locals.el" under project root
   ;; The 'nil' configuration applies to all modes.
   ;; ((nil
@@ -375,9 +367,7 @@ you should place your code here."
   ;;   ))
 
   ;; ===========================================================================
-  (add-hook 'c-mode-common-hook 'my-indent-hook)
-  (add-hook 'c-mode-common-hook 'google-set-c-style)
-  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+  (add-hook 'c-mode-common-hook 'dtrt-indent-mode)
 
   ;; Associate major mode by file name extension
   (add-to-list 'auto-mode-alist '("\\.cnf\\'" . conf-mode))
@@ -385,17 +375,6 @@ you should place your code here."
 
   ;; inexpr-class
   ;; A class definition inside an expression. This is used for anonymous classes in Java. It’s also used for anonymous array initializers in Java.
-  (add-hook 'java-mode-hook (lambda ()
-                              (setq c-basic-offset 4
-                                    tab-width 4
-                                    indent-tabs-mode t
-                                    fill-column 100)
-                              (c-set-offset 'inexpr-class 0)
-                              ))
-  (add-hook 'nxml-mode-hook (lambda ()
-                              (setq c-basic-offset 4
-                                    tab-width 4
-                                    indent-tabs-mode t)))
   ;; ===========================================================================
   ;; whitespace
   (setq-default whitespace-style
