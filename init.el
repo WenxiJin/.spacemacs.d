@@ -80,7 +80,8 @@ values."
    dotspacemacs-additional-packages '(vlf
                                       groovy-mode
                                       nyan-mode
-                                      dtrt-indent)
+                                      dtrt-indent
+                                      atom-one-dark-theme)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -154,9 +155,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         atom-one-dark
-                         afternoon)
+   dotspacemacs-themes '(atom-one-dark
+                         spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
