@@ -367,7 +367,15 @@ you should place your code here."
   ;;   ))
 
   ;; ===========================================================================
+  ;; Indentation
   (add-hook 'c-mode-common-hook 'dtrt-indent-mode)
+  (add-hook 'java-mode-hook (lambda ()
+                              (setq c-basic-offset 4
+                                    tab-width 4
+                                    indent-tabs-mode t
+                                    fill-column 100)
+                              (c-set-offset 'inexpr-class 0)
+                              ))
 
   ;; Associate major mode by file name extension
   (add-to-list 'auto-mode-alist '("\\.cnf\\'" . conf-mode))
