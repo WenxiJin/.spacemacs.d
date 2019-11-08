@@ -388,7 +388,7 @@ you should place your code here."
 
   ;; ===========================================================================
   ;; highlight
-  (add-hook 'prog-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
+  ;; (add-hook 'prog-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
   ;; auto-highlight-symbol
   (global-set-key (kbd "<f5>") 'spacemacs/quick-ahs-forward)
   (global-set-key (kbd "<f6>") 'spacemacs/quick-ahs-backward)
