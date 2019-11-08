@@ -70,7 +70,7 @@ values."
      python
      sql
      (colors :variables
-             colors-colorize-identifiers 'variables
+             ;; colors-colorize-identifiers 'variables
              colors-enable-nyan-cat-progress-bar t)
      )
    ;; List of additional packages that will be installed without being
