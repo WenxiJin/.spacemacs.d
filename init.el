@@ -375,6 +375,7 @@ you should place your code here."
                                     indent-tabs-mode t
                                     fill-column 100)
                               (c-set-offset 'inexpr-class 0)
+                              (c-set-offset 'annotation-var-cont 0)
                               ))
 
   ;; Associate major mode by file name extension
