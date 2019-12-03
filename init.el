@@ -393,7 +393,7 @@ you should place your code here."
   ;; auto-completion
 
   ;; Enable toggles
-  (add-hook 'prog-mode-hook 'spacemacs/toggle-golden-ratio-on)
+  ;; (add-hook 'prog-mode-hook 'spacemacs/toggle-golden-ratio-on)
 
   ;; ===========================================================================
   ;; highlight
