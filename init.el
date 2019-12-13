@@ -62,7 +62,7 @@ values."
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
-     java
+     ;; java
      javascript
      html
      shell-scripts
@@ -368,7 +368,7 @@ you should place your code here."
 
   ;; ===========================================================================
   ;; Indentation
-  (add-hook 'c-mode-common-hook 'dtrt-indent-mode)
+  ;; (add-hook 'c-mode-common-hook 'dtrt-indent-mode)
   (add-hook 'java-mode-hook (lambda ()
                               (setq c-basic-offset 4
                                     tab-width 4
