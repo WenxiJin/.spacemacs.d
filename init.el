@@ -378,8 +378,6 @@ you should place your code here."
                               (c-set-offset 'arglist-cont-nonempty '+)
                               ))
   (remove-hook 'prog-mode-hook 'smartparens-mode)
-  (remove-hook 'prog-mode-hook 'spacemacs/load-yasnippet)
-  (remove-hook 'find-file-hooks 'vc-find-file-hook)
 
   ;; Associate major mode by file name extension
   (add-to-list 'auto-mode-alist '("\\.cnf\\'" . conf-mode))
