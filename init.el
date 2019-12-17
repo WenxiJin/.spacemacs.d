@@ -44,7 +44,7 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     spell-checking
+     ;; spell-checking
      ;; syntax-checking
      version-control
      ;; cscope
@@ -62,26 +62,20 @@ values."
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
-     java
-     javascript
+     ;; java
+     ;; javascript
      html
      shell-scripts
-     ruby
+     ;; ruby
      python
      sql
-     (colors :variables
-             ;; colors-colorize-identifiers 'variables
-             colors-enable-nyan-cat-progress-bar t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(vlf
-                                      groovy-mode
-                                      nyan-mode
-                                      dtrt-indent
-                                      )
+                                      groovy-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -348,7 +342,6 @@ you should place your code here."
   ;; Encoding system
   (set-language-environment 'Latin-1)
   ;;
-  (nyan-mode 1)
 
   ;; https://www.gnu.org/software/emacs/manual/html_node/efaq/Customizing-C-and-C_002b_002b-indentation.html#Customizing-C-and-C_002b_002b-indentation
   ;; C-c C-o to show syntactic symbol
@@ -380,7 +373,10 @@ you should place your code here."
   (add-hook 'c-mode-common-hook 'google-set-c-style)
   (add-hook 'c-mode-common-hook 'google-make-newline-indent)
   (add-hook 'java-mode-hook (lambda ()
-                              (setq c-basic-offset 4)))
+                              (setq c-basic-offset 4
+                                    fill-column 100)
+                              (c-set-offset 'arglist-cont-nonempty '+)
+                              ))
 
   ;; Associate major mode by file name extension
   (add-to-list 'auto-mode-alist '("\\.cnf\\'" . conf-mode))
