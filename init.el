@@ -282,7 +282,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -378,6 +378,8 @@ you should place your code here."
                               (c-set-offset 'arglist-cont-nonempty '+)
                               ))
   (remove-hook 'prog-mode-hook 'smartparens-mode)
+  (remove-hook 'prog-mode-hook 'spacemacs/load-yasnippet)
+  (remove-hook 'find-file-hooks 'vc-find-file-hook)
 
   ;; Associate major mode by file name extension
   (add-to-list 'auto-mode-alist '("\\.cnf\\'" . conf-mode))
