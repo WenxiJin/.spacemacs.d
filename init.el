@@ -377,6 +377,7 @@ you should place your code here."
                                     fill-column 100)
                               (c-set-offset 'arglist-cont-nonempty '+)
                               ))
+  (remove-hook 'prog-mode-hook 'smartparens-mode)
 
   ;; Associate major mode by file name extension
   (add-to-list 'auto-mode-alist '("\\.cnf\\'" . conf-mode))
