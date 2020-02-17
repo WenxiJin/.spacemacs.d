@@ -375,7 +375,6 @@ you should place your code here."
   (add-hook 'java-mode-hook (lambda ()
                               (setq c-basic-offset 4
                                     fill-column 100)
-                              (c-set-offset 'arglist-cont-nonempty '+)
                               ))
   (remove-hook 'prog-mode-hook 'smartparens-mode)
 
