@@ -371,15 +371,26 @@ you should place your code here."
   (add-hook 'java-mode-hook (lambda ()
                               (setq c-basic-offset 4
                                     tab-width 4
-                                    indent-tabs-mode t
                                     fill-column 100)
                               ))
-  (remove-hook 'prog-mode-hook 'smartparens-mode)
+  ;; curly brace in a new line
+  (require 'smartparens-config)
+  (defun my-create-newline-and-allman-format (&rest _ignored)
+    "Allman-style formatting for C."
+    (interactive)
+    (progn
+      (newline-and-indent)
+      (previous-line) (previous-line) (search-forward "{") (backward-char) (newline-and-indent)
+      (next-line) (indent-according-to-mode)
+      )
+    )
+  (sp-local-pair '(c-mode) "{" nil :post-handlers '((my-create-newline-and-allman-format "RET")))
+  (sp-local-pair '(c++-mode) "{" nil :post-handlers '((my-create-newline-and-allman-format "RET")))
 
   ;; Associate major mode by file name extension
   (add-to-list 'auto-mode-alist '("\\.cnf\\'" . conf-mode))
   (add-to-list 'auto-mode-alist '("\\.jobdsl\\'" . groovy-mode))
-  
+
   ;; ===========================================================================
   ;; whitespace
   (setq-default whitespace-style
