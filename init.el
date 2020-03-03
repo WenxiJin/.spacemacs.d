@@ -335,10 +335,6 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (xterm-mouse-mode -1)
   ;; ===========================================================================
-  ;; indent
-  ;; setq-default sets the global default value
-  ;; setq sets the local value in the current buffer
-  (setq-default tab-width 4)
   ;; Encoding system
   (set-language-environment 'Latin-1)
   ;;
@@ -374,6 +370,8 @@ you should place your code here."
   (add-hook 'c-mode-common-hook 'google-make-newline-indent)
   (add-hook 'java-mode-hook (lambda ()
                               (setq c-basic-offset 4
+                                    tab-width 4
+                                    indent-tabs-mode t
                                     fill-column 100)
                               ))
   (remove-hook 'prog-mode-hook 'smartparens-mode)
